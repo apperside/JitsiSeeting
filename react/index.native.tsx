@@ -32,7 +32,7 @@ type Props = {
  *
  * @extends Component
  */
-class Root extends PureComponent<Props> {
+class Root_ORIGINAL extends PureComponent<Props> {
     /**
      * Implements React's {@link Component#render()}.
      *
@@ -40,11 +40,19 @@ class Root extends PureComponent<Props> {
      * @returns {ReactElement}
      */
     render() {
+        console.warn("the props", { ...this.props })
         return (
             <App
                 {...this.props} />
         );
     }
+}
+
+const Root = (props) => {
+    return (
+        <MyApp
+            {...props} />
+    );
 }
 
 // Initialize logging.
@@ -71,7 +79,7 @@ if (!__DEV__) {
 
 
 // Register the main/root Component of JitsiMeetView.
-AppRegistry.registerComponent('App', () => MyApp);
+AppRegistry.registerComponent('App', () => Root);
 
 // Register the main/root Component of IncomingCallView.
 AppRegistry.registerComponent('IncomingCallApp', () => IncomingCallApp);

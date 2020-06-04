@@ -15,7 +15,6 @@ import { SettingsView } from '../../settings';
 import { setSideBarVisible } from '../actions';
 import { AbstractWelcomePage, _mapStateToProps as _abstractMapStateToProps } from './AbstractWelcomePage';
 import LocalVideoTrackUnderlay from './LocalVideoTrackUnderlay';
-import { MyComponent } from "./MyComponent";
 import styles, { PLACEHOLDER_TEXT_COLOR } from './styles';
 import VideoSwitch from './VideoSwitch';
 import WelcomePageLists from './WelcomePageLists';
@@ -274,7 +273,7 @@ class WelcomePage extends AbstractWelcomePage {
                             <Text style={styles.enterRoomText}>
                                 {t('welcomepage.roomname')}
                             </Text>
-                            <MyComponent prova="ciao" />
+
                             <TextInput
                                 accessibilityLabel={t(roomnameAccLabel)}
                                 autoCapitalize='none'

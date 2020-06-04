@@ -11,7 +11,7 @@ import { _initLogging } from './features/base/logging/functions';
 import { IncomingCallApp } from './features/mobile/incoming-call';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-// import { App } from "./features/app";
+import { App } from "./features/app";
 
 
 declare var __DEV__;
@@ -50,10 +50,14 @@ class DetailsScreen extends React.Component {
 const Stack = createStackNavigator();
 const MyApp: React.FC<Props> = props => {
 
+    console.warn(props)
+    const Details = () => {
+        return <App {...props} />
+    }
     return <NavigationContainer>
         <Stack.Navigator>
             <Stack.Screen name="Home" component={HomeScreen} />
-            <Stack.Screen name="Details" component={DetailsScreen} />
+            <Stack.Screen name="Details" component={Details} />
         </Stack.Navigator>
     </NavigationContainer>
 }

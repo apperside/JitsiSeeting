@@ -1,16 +1,17 @@
 {
+  "extends": "./tsconfig.base.json",
   "compilerOptions": {
-    "jsx": "react",
-    "target": "es5",
-    "module": "commonjs",
-    "strict": false,
-    "esModuleInterop": true,
+    "noEmit": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "lib": [
-      "dom",
-      "es2015.promise",
-      "es5"
+    "typeRoots": [
+      "@node_modules/@types",
+      "@types",
+      "typings"
     ]
-  }
+  },
+  "include": [
+    "index.js",
+    "src",
+    "typings"
+  ]
 }

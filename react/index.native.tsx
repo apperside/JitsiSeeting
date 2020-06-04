@@ -2,8 +2,9 @@
 
 // Apply all necessary polyfills as early as possible to make sure anything imported henceforth
 // sees them.
+import 'react-native-gesture-handler';
 import './features/mobile/polyfills';
-
+import { NavigationContainer } from '@react-navigation/native';
 import React, { PureComponent } from 'react';
 import { AppRegistry } from 'react-native';
 
@@ -11,7 +12,6 @@ import { App } from './features/app';
 import { _initLogging } from './features/base/logging/functions';
 import { IncomingCallApp } from './features/mobile/incoming-call';
 import MyApp from "./MyApp";
-
 declare var __DEV__;
 
 /**

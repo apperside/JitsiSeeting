@@ -21,6 +21,12 @@ target 'JitsiMeet' do
   pod 'FBReactNativeSpec', :path => '../node_modules/react-native/Libraries/FBReactNativeSpec/'
   pod 'RCTRequired', :path => '../node_modules/react-native/Libraries/RCTRequired/'
   pod 'RCTTypeSafety', :path => '../node_modules/react-native/Libraries/TypeSafety/'
+  pod 'RNCMaskedView', :path => '../node_modules/@react-native-community/masked-view'
+  pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
+  pod 'RNReanimated', :path => '../node_modules/react-native-reanimated'
+  pod 'RNScreens', :path => '../node_modules/react-native-screens'
+  pod 'react-native-safe-area-context', :path => '../node_modules/react-native-safe-area-context'
+  
   pod 'React', :path => '../node_modules/react-native/'
   pod 'ReactCommon', :path => '../node_modules/react-native/ReactCommon', :subspecs => [
     'turbomodule'

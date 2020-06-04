@@ -22,7 +22,6 @@ import android.os.Build;
 import android.provider.Settings;
 import android.util.Log;
 import android.view.KeyEvent;
-import androidx.annotation.Nullable;
 
 import org.jitsi.meet.sdk.JitsiMeet;
 import org.jitsi.meet.sdk.JitsiMeetActivity;
@@ -32,6 +31,8 @@ import java.lang.reflect.Method;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Map;
+
+import androidx.annotation.Nullable;
 
 /**
  * The one and only Activity that the Jitsi Meet app needs. The
@@ -50,6 +51,7 @@ public class MainActivity extends JitsiMeetActivity {
 
     // JitsiMeetActivity overrides
     //
+
 
     @Override
     protected boolean extraInitialize() {

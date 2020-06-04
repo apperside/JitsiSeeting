@@ -18,22 +18,21 @@ package org.jitsi.meet.sdk;
 
 import android.app.Activity;
 
-import androidx.annotation.Nullable;
-
 import com.facebook.hermes.reactexecutor.HermesExecutorFactory;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.NativeModule;
-import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.bridge.ReactApplicationContext;
+import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.common.LifecycleState;
 import com.facebook.react.devsupport.DevInternalSettings;
 import com.facebook.react.modules.core.DeviceEventManagerModule;
 import com.facebook.react.uimanager.ViewManager;
 import com.facebook.soloader.SoLoader;
-
 import com.oney.WebRTCModule.RTCVideoViewManager;
 import com.oney.WebRTCModule.WebRTCModule;
+import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
+import com.swmansion.reanimated.ReanimatedPackage;
 
 import org.webrtc.SoftwareVideoDecoderFactory;
 import org.webrtc.SoftwareVideoEncoderFactory;
@@ -44,6 +43,8 @@ import java.lang.reflect.Constructor;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+
+import androidx.annotation.Nullable;
 
 class ReactInstanceManagerHolder {
     /**
@@ -69,6 +70,8 @@ class ReactInstanceManagerHolder {
                 new LocaleDetector(reactContext),
                 new LogBridgeModule(reactContext),
                 new PictureInPictureModule(reactContext),
+//                new RNGestureHandlerModule(reactContext),
+//                new ReanimatedModule(reactContext),
                 new ProximityModule(reactContext),
                 new WiFiStatsModule(reactContext),
                 new org.jitsi.meet.sdk.net.NAT64AddrInfoModule(reactContext)));
@@ -195,6 +198,9 @@ class ReactInstanceManagerHolder {
                 new com.reactnativecommunity.asyncstorage.AsyncStoragePackage(),
                 new com.reactnativecommunity.netinfo.NetInfoPackage(),
                 new com.reactnativecommunity.webview.RNCWebViewPackage(),
+                new com.th3rdwave.safeareacontext.SafeAreaContextPackage(),
+                new RNGestureHandlerPackage(),
+                new ReanimatedPackage(),
                 new com.rnimmersive.RNImmersivePackage(),
                 new com.zmxv.RNSound.RNSoundPackage(),
                 new ReactPackageAdapter() {

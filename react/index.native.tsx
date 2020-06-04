@@ -10,6 +10,7 @@ import { AppRegistry } from 'react-native';
 import { App } from './features/app';
 import { _initLogging } from './features/base/logging/functions';
 import { IncomingCallApp } from './features/mobile/incoming-call';
+import MyApp from "./MyApp";
 
 declare var __DEV__;
 
@@ -41,7 +42,7 @@ class Root extends PureComponent<Props> {
     render() {
         return (
             <App
-                { ...this.props } />
+                {...this.props} />
         );
     }
 }
@@ -59,7 +60,7 @@ if (!__DEV__) {
 
     AppRegistry.runApplication = (...args) => {
         // $FlowExpectedError
-        console.log = () => {};
+        console.log = () => { };
         __orig_appregistry_runapplication(...args);
         // $FlowExpectedError
         console.log = __orig_console_log;
@@ -70,7 +71,7 @@ if (!__DEV__) {
 
 
 // Register the main/root Component of JitsiMeetView.
-AppRegistry.registerComponent('App', () => Root);
+AppRegistry.registerComponent('App', () => MyApp);
 
 // Register the main/root Component of IncomingCallView.
 AppRegistry.registerComponent('IncomingCallApp', () => IncomingCallApp);
